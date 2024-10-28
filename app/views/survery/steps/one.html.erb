@@ -1,0 +1,23 @@
+<%= form_for @survey, method: :put, url: wizard_path do |f| %>
+  <% if f.object.errors.any? %>
+    <div class="error_messages">
+      <% f.object.errors.full_messages.each do |error| %>
+        <p><%= error %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <legend>Question 1 of 12</legend>
+
+    <div>
+      <%= f.label :question, "What are you currently using to manage your events? (apps, companies, personal workflow, anything)" %>
+      <%= f.text_field :question %>
+    </div>
+
+
+    <div>
+      <%= f.submit 'Next Step' %>
+    </div>
+  </fieldset>
+<% end %>
